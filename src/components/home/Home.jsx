@@ -21,29 +21,6 @@ const theme = createTheme({
   },
 });
 
-const highContrastTheme = createTheme({
-  palette: {
-    primary: {
-      main: '#000000', 
-    },
-    secondary: {
-      main: '#ffffff', 
-    },
-    background: {
-      default: '#ffffff', 
-      paper: '#000000', 
-    },
-    text: {
-      primary: '#000000', 
-      secondary: '#ffffff', 
-    },
-    yellow: {
-      main: '#FFFF00', 
-    },
-  },
-});
-
-
 const sortOptions = [
   { value: 'recentes', label: 'Mais Recentes' },
   { value: 'alfabetica', label: 'Ordem Alfabética' },
@@ -74,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
   },
   filterContainer:{
     marginLeft: '5vw', 
+    marginTop:'2vw'
   },
   select: {
     '& .MuiSelect-select': {
@@ -95,18 +73,33 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   highContrastRoot: {
-    backgroundColor: '#000000', 
+    backgroundColor: '#050834', 
   },
+  divStyle: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems:'center',
+    width: '100%'
+  },
+
   linkStyle: {
-    color: '#bdbdbd',
+    color: 'black',
     fontSize: '1.3rem',
     display: 'flex',
     justifyContent: 'center',
+    alignItems:'center',
     textDecoration: 'none', 
+    marginBottom: '2rem',
+    borderRadius:'1rem',
+    width: '15rem',
+    border: '1px solid #ccc',
+    textAlign:'center',
     '&:hover': {
       color: '#757575', 
     },
+
   },
+
 }));
   
 const Home = () => {
@@ -205,7 +198,9 @@ const Home = () => {
             {renderArticles(sortedArticles)}
           </Grid>
         </div>
-        <Link to="/base-de-conhecimento" className={classes.linkStyle} style={{ color: highContrast ?'#FFFF00' : '#bdbdbd'}}>Ver mais...</Link>
+        <div className={classes.divStyle}>
+        <Link  to="/base-de-conhecimento" className={classes.linkStyle} style={{ color: highContrast ?'#FFFF' : '#bdbdbd'}}><div>Carregar mais</div></Link>
+        </div>
         <Footer highContrast={highContrast}/>
       </div>
     </ThemeProvider>

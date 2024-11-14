@@ -11,10 +11,20 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   image: {
-    width: '100%'
+    width: '100%',
+    
+  },
+  background: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(162, 194, 222, 0.2)',
   },
   headerText: {
     position: 'absolute',
+    zIndex:100,
     top: '30%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
@@ -26,13 +36,15 @@ const useStyles = makeStyles((theme) => ({
   },
   description: {
     position: 'absolute',
-    top: 'calc(30% + 5vw)',
+    zIndex:100,
+    top: 'calc(30% + 3vw)',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     textAlign: 'center',
     color: '#fff',
-    fontSize: '1.3vw',
+    fontSize: '2vw',
     fontWeight: 'normal',
+    width: '70vw'
   },
   searchContainer: {
     position: 'absolute',
@@ -52,11 +64,16 @@ const useStyles = makeStyles((theme) => ({
   searchInput: {
     width: '80%',
     borderRadius: '2.5vw',
-    background: 'white',    
+    background: '#FFFFFF',   
+    zIndez:1 
   },
   '@media (max-width: 600px)': {
     searchContainer: {
       display: 'none', 
+    },
+
+    description: {
+      fontSize: '3.5vw',
     },
   },
 }));
@@ -73,15 +90,20 @@ const ImageContainer = ({ highContrast }) => {
 
   return (
     <div className={classes.root}>
-      <img 
-        src="./adptare.png" 
-        className={classes.image} 
-        style={{ filter: highContrast ? 'brightness(10%)' : 'brightness(50%)' }} 
-        alt="Background"
-      />
-      <div className={classes.headerText}>
-      IncluiUFCG
+      <div className={classes.ContainerImage}
+        style={{width:'100%', height:'40rem', overflow:'hidden'}}
+      >
+        <img 
+          src="./background.jpg" 
+          className={classes.image} 
+          style={{
+            width: '100%', height: '100%', objectFit: 'cover', filter: `blur(2px) ${highContrast ? 'brightness(10%)' : 'brightness(50%)'}`
+          }}
+        />
       </div>
+      <div className={classes.background} style={{
+          filter: `blur(2px)`
+        }}></div>
       <div className={classes.description}>
         Explore nosso acervo digital, repleto de documentos e análises de dados voltados para promover uma educação inclusiva.
       </div>
@@ -91,13 +113,23 @@ const ImageContainer = ({ highContrast }) => {
           id="fullWidth"
           label="Pesquisar..." 
           variant="filled" 
-          InputProps={{ disableUnderline: true }}
+          InputProps={{
+            disableUnderline: true,
+            endAdornment: (
+              <IconButton 
+                aria-label="search" 
+                style={{ color: '#808080' }} 
+                component={Link} 
+                to={`/busca/searchTerm=${searchTerm}`}
+                disableRipple
+              >
+                <SearchIcon />
+              </IconButton>
+            ),
+          }}
           className={classes.searchInput}
           onChange={handleSearchChange}
         />
-        <IconButton type="submit" aria-label="search" style={{ color: '#ffffff' }} component={Link} to={`/busca/searchTerm=${searchTerm}`}>
-          <SearchIcon />
-        </IconButton>
       </div>
     </div>
   );

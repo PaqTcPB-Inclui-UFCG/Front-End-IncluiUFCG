@@ -1,8 +1,8 @@
 const BASE_URL = 'http://localhost:8081/';
 
 const ENDPOINTS = {
-    articles:{
-        
+    articles: {
+
         allArticles: BASE_URL + 'api/articles/all',
         postArticle: BASE_URL + 'api/articles',
         getArticleById: (articleId) => `${BASE_URL}api/articles/${articleId}`,
@@ -10,9 +10,9 @@ const ENDPOINTS = {
         getAllTags: BASE_URL + 'api/articles/getAllTags',
         updateArticle: (articleId) => `${BASE_URL}api/articles/${articleId}`,
         deleteArticle: (articleId) => `${BASE_URL}api/articles/${articleId}`,
-        searchArticles: (searchTerm, searchType) => `${BASE_URL}api/articles/search?keyword=${searchTerm}&searchType=${searchType}`
-
-
+        searchArticles: (searchTerm, searchType) => `${BASE_URL}api/articles/search?keyword=${searchTerm}&searchType=${searchType}`,
+        totalLikes: (articleId) => `${BASE_URL}api/articles/${articleId}/getFavorites`,
+        
     },
     attachments: {
         uploadAttachment: (articleId) => `${BASE_URL}api/attachments?articleId=${articleId}`,
@@ -24,7 +24,10 @@ const ENDPOINTS = {
         getUser: (userId) => `${BASE_URL}users/${userId}`,
         uploadPhoto: (userId) => `${BASE_URL}users/${userId}/photo`,
         changePassword: (userId) => `${BASE_URL}users/${userId}/change-password`,
-        getUserList: BASE_URL +'users',
+        likeArticle: (articleId, userId) => `${BASE_URL}users/${userId}/${articleId}/like`,
+        dislikeArticle: (articleId, userId) => `${BASE_URL}users/${userId}/${articleId}/dislike`,
+        favorites: (userId) => `${BASE_URL}users/${userId}/favoritesListOfUser`,
+        getUserList: BASE_URL + 'users',
     },
     auth: {
         login: `${BASE_URL}auth/login`

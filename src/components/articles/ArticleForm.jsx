@@ -180,7 +180,7 @@ const ArticleForm = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header highContrast={highContrast} setHighContrast={setHighContrast}/>
-      <div ref={bodyRef} style={{ minHeight: '100vh', backgroundColor: highContrast ? "#000000" : '', padding: '2rem', marginBottom: !highContrast ? '2rem' : "", marginLeft: !highContrast ? '10vw' : "", marginRight: !highContrast ? '10vw' : "" }}>
+      <div ref={bodyRef} style={{ minHeight: '100vh', backgroundColor: highContrast ? "#050834" : '', padding: '2rem', marginBottom: !highContrast ? '2rem' : "", marginLeft: !highContrast ? '10vw' : "", marginRight: !highContrast ? '10vw' : "" }}>
         <Paper elevation={3} style={{ padding: '2rem' }}>
           <form onSubmit={handleSubmit}>
             {articlePublished && (
@@ -206,7 +206,7 @@ const ArticleForm = () => {
                   required
                   style={{ marginBottom: '1rem', background: highContrast ? "#fff" : '' }}
                   InputLabelProps={{
-                    sx: { color: highContrast ? "#0000000" : 'inherit', background: highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }
+                    sx: { color: highContrast ? "#0000000" : 'inherit', background: highContrast ? "#FFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }
                   }}
                   sx={{
                     '& fieldset': {
@@ -228,7 +228,7 @@ const ArticleForm = () => {
                   required
                   style={{ marginBottom: '1rem', background: highContrast ? "#fff" : '' }}
                   InputLabelProps={{
-                    sx: { color: highContrast ? "#0000000" : 'inherit', background: highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }
+                    sx: { color: highContrast ? "#0000000" : 'inherit', background: highContrast ? "#FFFF" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }
                   }}
                   sx={{
                     '& fieldset': {
@@ -310,11 +310,11 @@ const ArticleForm = () => {
                 />
                 <label htmlFor="contained-button-cover">
                   <Button variant="contained" color="primary" component="span" sx={{
-                    backgroundColor: highContrast ? '#FFFF00' : '#1976d2',
-                    color: highContrast ? '#000000' : '#fff',
+                    backgroundColor: highContrast ? '#050834' : '#1976d2',
+                    color: highContrast ? '#FFFF' : '#fff',
                     fontWeight: 'bold',
                     '&:hover': {
-                      backgroundColor: highContrast ? '#FFFF00' : '#0d56a6',
+                      backgroundColor: highContrast ? '#050834' : '#0d56a6',
                     }
                   }}>
                     Adicionar Capa
@@ -353,11 +353,11 @@ const ArticleForm = () => {
                 <label htmlFor="contained-button-file">
                   <Button
                     sx={{
-                      backgroundColor: highContrast ? '#FFFF00' : '#1976d2',
-                      color: highContrast ? '#000000' : '#fff',
+                      backgroundColor: highContrast ? '#050834' : '#1976d2',
+                      color: highContrast ? '#fff' : '#fff',
                       fontWeight: 'bold',
                       '&:hover': {
-                        backgroundColor: highContrast ? '#FFFF00' : '#0d56a6',
+                        backgroundColor: highContrast ? '#050834' : '#0d56a6',
                       }
                     }}
                     variant="contained"
@@ -374,11 +374,11 @@ const ArticleForm = () => {
               </Grid>
               <Grid item xs={12}>
                 <Button type="submit" variant="contained" color="primary" sx={{
-                  backgroundColor: highContrast ? '#FFFF00' : '#1976d2',
-                  color: highContrast ? '#000000' : '#fff',
+                  backgroundColor: highContrast ? '#050834' : '#1976d2',
+                  color: highContrast ? '#FFF' : '#fff',
                   fontWeight: 'bold',
                   '&:hover': {
-                    backgroundColor: highContrast ? '#FFFF00' : '#0d56a6',
+                    backgroundColor: highContrast ? '#050834' : '#0d56a6',
                   }
                 }}>
                   Publicar Artigo

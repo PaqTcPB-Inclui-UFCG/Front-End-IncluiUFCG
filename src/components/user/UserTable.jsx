@@ -83,9 +83,9 @@ const UserTable = () => {
   return (
     <ThemeProvider theme={theme}>
         <Header highContrast={highContrast} setHighContrast={setHighContrast}/>
-      <div ref={bodyRef} style={{ padding: '2rem', marginBottom: '2rem', backgroundColor: highContrast ? "#000000" : '', minHeight: '100vh' }}>
+      <div ref={bodyRef} style={{ padding: '2rem', marginBottom: '2rem', backgroundColor: highContrast ? "#050834" : '', minHeight: '100vh' }}>
         <Paper elevation={3} style={{ padding: '2rem', marginLeft: '10vw', marginRight: '10vw', backgroundColor: highContrast ? "#000000" : '' }}>
-          <Typography variant='h5' style={{ color: highContrast ? "#FFFF00" : '', fontWeight: highContrast ? "bold" : "inherit" }}>Usuários cadastrados</Typography>
+          <Typography variant='h5' style={{ color: highContrast ? "#FFFF" : '', fontWeight: highContrast ? "bold" : "inherit" }}>Usuários cadastrados</Typography>
           <div style={{ marginTop: "2rem", marginBottom: '1rem', display: 'flex', gap: '1rem' }}>
             <TextField
               label="Filtrar por nome"
@@ -94,11 +94,11 @@ const UserTable = () => {
               onChange={(e) => setNameFilter(e.target.value)}
               style={{ marginBottom: '1rem', background: highContrast ? "#fff" : '' }}
               InputLabelProps={{
-                sx: { color: highContrast ? "#0000000" : 'inherit', background: highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }
+                sx: { color: highContrast ? "#0000000" : 'inherit', background: highContrast ? "" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }
               }}
               sx={{
                 '& fieldset': {
-                  borderColor: highContrast ? "#FFFF00" : '',
+                  borderColor: highContrast ? "#7CB8F2" : '',
                   borderWidth: '0.2rem'
 
                 }
@@ -112,11 +112,11 @@ const UserTable = () => {
               inputProps={{ 'aria-label': 'Without label' }}
               style={{ marginBottom: '1rem', background: highContrast ? "#fff" : '', fontWeight: highContrast ? "bold" : "normal" }}
               InputLabelProps={{
-                sx: { color: highContrast ? "#0000000" : 'inherit', background: highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }
+                sx: { color: highContrast ? "#0000000" : 'inherit', background: highContrast ? "" : 'inherit', fontWeight: highContrast ? "bold" : "normal" }
               }}
               sx={{
                 '& fieldset': {
-                  borderColor: highContrast ? "#FFFF00" : '',
+                  borderColor: highContrast ? "#7CB8F2" : '',
                   borderWidth: '0.2rem'
 
                 }
@@ -153,7 +153,7 @@ const UserTable = () => {
                         <MenuItem value="USER">User</MenuItem>
                       </Select>
                       <CheckCircleOutlineIcon
-                        style={{ cursor: 'pointer', color: highContrast ? '#FFFF00' : 'green' }} onClick={() => handleRoleChange(user.id, selectedRole)}
+                        style={{ cursor: 'pointer', color: highContrast ? '#FFFF' : 'green' }} onClick={() => handleRoleChange(user.id, selectedRole)}
                       />
                     </TableCell>
                   </TableRow>

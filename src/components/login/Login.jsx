@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import {createTheme , Container, ThemeProvider, CssBaseline, Grid, Paper, Typography, TextField, Button, Box, CircularProgress } from '@mui/material';
+import {createTheme , Container, ThemeProvider, CssBaseline, Grid, Paper, Typography, TextField, Button, Box, CircularProgress , useMediaQuery } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import GoogleLogin from '@leecheuk/react-google-login';
 import Header from '../Header';
@@ -7,7 +7,6 @@ import Footer  from '../Footer';
 import axios from 'axios';
 import { useHotkeys } from 'react-hotkeys-hook';
 import ENDPOINTS from '../../endPoints';
-
 const theme = createTheme({
   typography: {
     fontFamily: [
@@ -19,7 +18,6 @@ const theme = createTheme({
 
 const useStyles = makeStyles(() => ({
   paper: {
-    padding: '2rem',
     maxWidth: 400,
     margin: 'auto',
     marginTop: '2rem',
@@ -120,19 +118,25 @@ const Login = () => {
     }
   }, [setHighContrast]);
 
-
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <ThemeProvider theme={theme}>
+     <ThemeProvider theme={theme}>
+   
     <CssBaseline />
     <Header highContrast={highContrast} setHighContrast={setHighContrast}/>
-      <div ref={bodyRef} style={{backgroundColor: highContrast ? "#000000" : '', minHeight: '100vh'}}>
-      <Container sx={{minHeight: 'calc(100vh - 128px)', backgroundColor: highContrast ? "#000000" : ''}}>
-    <Paper className={classes.paper} elevation={3} sx={{backgroundColor: highContrast ? "#000000" : ''}}>
-      <Typography variant="h4" align="center" gutterBottom sx={{ color: highContrast ? "#FFFF00" : 'inherit'}}>
+      <div ref={bodyRef} style={{backgroundColor: highContrast ? "#050834" : '', minHeight: '100vh'}}>
+      <Container sx={{minHeight: 'calc(100vh - 128px)', backgroundColor: highContrast ? "#050834" : ''}} style={{ padding: '2rem', marginBottom: '2rem', display:'flex', alignItems:'center', justifyContent:'center'}}>
+      
+    <Paper className={classes.paper} elevation={3} style={{borderRadius: '10px', backgroundColor: highContrast ? "#FFFFFF" : '', width: '40rem',}}>
+    <div style={{borderRadius: '10px  10px 0 0 ', width:'100%', height: isMobile? '4.5rem': '5rem', background: highContrast? "#D5D5D5" :'#4183ba', margin:0,}}></div>
+    
+    <div style={{padding:'2rem'}}>
+   
+      <Typography variant="h4" color='black' fontWeight={"700"} align="center" marginBottom={"2rem"} gutterBottom styles={{ marginTop: isMobile? "0rem" : "1rem", fontSize: isMobile? "180%": "240%", color: highContrast ? "#00000" : 'inherit'}}>
         Login
       </Typography>
-      <form className={classes.form} onSubmit={handleSubmit}>
+      <form className={classes.form} onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width:"100%" }}>
         <TextField
           label="Email"
           type="email"
@@ -140,16 +144,22 @@ const Login = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          InputLabelProps={{
-            sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
+          style={{ marginBottom: '1rem',  background: highContrast ? "#ffffff" : '', width: '90%'}}
+            InputLabelProps={{
+              sx: { fontWeight: highContrast ? "bold": "normal" }
           }}
           sx={{
             '& fieldset': {
-              borderColor: highContrast ? "#FFFF00" : '',
-              borderWidth: '0.2rem' 
+              borderRadius:0,
+              borderTop: 'none', 
+              borderRight: 'none', 
+              borderLeft: 'none', 
+              borderBottom: `2px solid `,
+              borderBottom: `2px solid ${highContrast ? '': 'inherit'}`,
 
-            }
-          }}
+            },
+            width: '60%',
+        }}
         />
         <TextField
           label="Senha"
@@ -158,15 +168,21 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          InputLabelProps={{
-            sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
+          style={{ marginBottom: '0.5rem', width: '90%'}}
+            InputLabelProps={{
+              sx: { fontWeight: highContrast ? "bold": "normal" }
           }}
           sx={{
             '& fieldset': {
-              borderColor: highContrast ? "#FFFF00" : '',
-              borderWidth: '0.2rem' 
-            }
-          }}
+              borderRadius:0,
+              borderTop: 'none', 
+              borderRight: 'none', 
+              borderLeft: 'none', 
+              borderBottom: `2px solid ${highContrast ? '': 'inherit'}`,
+
+            },
+            width: '60%',
+        }}
         />
         <Button
           type="submit"
@@ -176,11 +192,13 @@ const Login = () => {
           className={classes.submitButton}
           disabled={loading}
           sx={{
-            backgroundColor: highContrast ? '#FFFF00' : '#1976d2', 
-            color: highContrast ? '#000000' : '#fff', 
+            borderRadius:'.6rem',
+            marginTop: isMobile? "0.5rem":'1.5rem',
+            backgroundColor: highContrast ? '#050834' : '#4183ba', 
+            color: highContrast ? '#FFFFF' : '#fff', 
             fontWeight: 'bold' , 
             '&:hover': {
-              backgroundColor: highContrast ? '#FFFF00' : '#0d56a6', 
+              backgroundColor: highContrast ? '#030624' : '#0d56a6', 
             }
           }}
         >
@@ -208,10 +226,12 @@ const Login = () => {
           )}
         />
       </Box> */}
+    </div>
     </Paper>    
     </Container>    
     </div>
     <Footer highContrast={highContrast}/>
+    
     </ThemeProvider>
   );
 };

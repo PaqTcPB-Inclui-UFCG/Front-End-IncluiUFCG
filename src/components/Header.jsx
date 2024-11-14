@@ -22,6 +22,7 @@ import { useHotkeys } from 'react-hotkeys-hook';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
+import "@fontsource/inter";
 
 
 
@@ -173,6 +174,7 @@ export default function Header({ highContrast, setHighContrast }) {
         boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.3)'
     };
 
+
     const titleStyle = {
         fontFamily: 'Marko One',
         fontStyle: 'normal',
@@ -180,7 +182,6 @@ export default function Header({ highContrast, setHighContrast }) {
         fontSize: '2.7vw',
         display: 'flex',
         alignItems: 'center',
-        marginRight: '5.8vw',
         color: '#000000',
         mixBlendMode: 'normal',
         flex: 'none',
@@ -190,23 +191,16 @@ export default function Header({ highContrast, setHighContrast }) {
     };
 
     const buttonStyle = {
-        fontFamily: 'Helvetica Neue',
-        fontWeight: 'medium',
-        fontSize: '1.3vw',
+        fontFamily: 'Inter',
+        fontWeight: highContrast? 'bold' :'medium',
+        fontSize: '1.2vw',
         color: '#6E6D7A',
         textTransform: 'none',
         marginLeft: '2.5vw'
     };
 
-    const searchButtonStyle = {
-        ...buttonStyle,
-        position: 'relative',
-        cursor: 'pointer',
-    };
-
     const signupButtonStyle = {
         ...buttonStyle,
-        backgroundColor: '#3B4BD8',
         borderRadius: '0.67vw',
         marginLeft: '0.83vw',
         color: 'white',
@@ -214,6 +208,7 @@ export default function Header({ highContrast, setHighContrast }) {
             backgroundColor: '#2C3DB1'
         }
     };
+
     useEffect(() => {
         const storedHighContrast = localStorage.getItem('highContrast');
         if (storedHighContrast !== null) {
@@ -221,13 +216,16 @@ export default function Header({ highContrast, setHighContrast }) {
         }
       }, [setHighContrast]);
     const isAdmin = sessionStorage.getItem('role') === 'ADMIN';
+    
     return (
         <React.Fragment>
             <AppBar position="static" style={appBarStyle}>
                 <Toolbar>
                     <Typography variant="h6" sx={{ ...titleStyle, ...(isMobile && { fontSize: '4vw' }) }}
                         component={Link} to="/">
-                        IncluiUFCG
+                        <img src='./title.png' 
+                        alt="incluiUFCG" 
+                        style={{ width: isMobile ? '20vh' : '30vh', height: 'auto' }}   />
                     </Typography>
                     {isMobile ? (
                         <IconButton
@@ -241,55 +239,49 @@ export default function Header({ highContrast, setHighContrast }) {
                         </IconButton>
                     ) : (
                         <React.Fragment>
-                            <Button sx={buttonStyle} component={Link} to="/sobre">Sobre</Button>
-                            <Button sx={buttonStyle} component={Link} to="/analise-de-dados">Perspectivas PCD: Análise de Dados</Button>
-                            <Box sx={{ flexGrow: 0 }}>
-                                <Tooltip title="">
-                                    {isAdmin && !isMobile && (
-                                        <Button sx={buttonStyle} onClick={handleOpenAdminMenu}>Administração</Button>
-                                    )}            </Tooltip>
-                                <Menu
-                                    sx={{ mt: '45px' }}
-                                    id="menu-appbar"
-                                    anchorEl={anchorElAdmin}
-                                    anchorOrigin={{
-                                        vertical: 'top',
-                                        horizontal: 'right',
-                                    }}
-                                    keepMounted
-                                    transformOrigin={{
-                                        vertical: 'top',
-                                        horizontal: 'right',
-                                    }}
-                                    open={Boolean(anchorElAdmin)}
-                                    onClose={handleCloseAdminMenu}
-                                >
-                                    {settings.map((setting) => (
-                                        <MenuItem key={setting} onClick={() => handleSettingClick(setting)}>
-                                            <Typography textAlign="center">{setting}</Typography>
-                                        </MenuItem>
-                                    ))}
-                                </Menu>
+                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+                                <Button sx={buttonStyle} component={Link} to="/sobre">Sobre</Button>
+                                <Button sx={buttonStyle} component={Link} to="/analise-de-dados">Perspectivas PCD: Análise de Dados</Button>
+                                <Box sx={{ flexGrow: 0 }}>
+                                    <Tooltip title="">
+                                        {isAdmin && !isMobile && (
+                                            <Button sx={buttonStyle} onClick={handleOpenAdminMenu}>Administração</Button>
+                                        )}            </Tooltip>
+                                    <Menu
+                                        sx={{ mt: '45px' }}
+                                        id="menu-appbar"
+                                        anchorEl={anchorElAdmin}
+                                        anchorOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'right',
+                                        }}
+                                        keepMounted
+                                        transformOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'right',
+                                        }}
+                                        open={Boolean(anchorElAdmin)}
+                                        onClose={handleCloseAdminMenu}
+                                    >
+                                        {settings.map((setting) => (
+                                            <MenuItem key={setting} onClick={() => handleSettingClick(setting)}>
+                                                <Typography textAlign="center">{setting}</Typography>
+                                            </MenuItem>
+                                        ))}
+                                    </Menu>
+                                </Box>
+                                <Button sx={buttonStyle} component={Link} to="/mapa-da-ufcg">Mapa da UFCG</Button>
+                               
                             </Box>
-                            <IconButton onClick={handleSearch} sx={searchButtonStyle}>
-                                <SearchIcon />
-                            </IconButton>
-                            {showSearchField && (
-                                <TextField
-                                    inputRef={searchRef}
-                                    type="search"
-                                    variant="outlined"
-                                    placeholder="Pesquisar..."
-                                    size="small"
-                                    onChange={handleSearchChange}
-
-                                />
-                            )}
+                            
                             <div style={{ marginLeft: 'auto' }}>
                                 {!isLoggedIn && (
                                     <React.Fragment>
-                                        <Button sx={buttonStyle} component={Link} to="/entrar">Login</Button>
-                                        <Button variant="contained" sx={signupButtonStyle} component={Link} to="/cadastrar">Cadastrar</Button>
+                                        <Box style={{ margin: '1rem 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                            <Button sx={buttonStyle} component={Link} to="/entrar">Login</Button>
+                                            <Button style={{background: highContrast? '#050834' : '#4183ba'}} variant="contained" sx={signupButtonStyle} component={Link} to="/cadastrar">Cadastrar</Button>
+                                        </Box>
+                                        
                                     </React.Fragment>
                                 )}
                             </div>
@@ -369,13 +361,13 @@ export default function Header({ highContrast, setHighContrast }) {
                     </Drawer>
                 )}
                 <Box borderTop={1} borderColor="divider" sx={{ borderColor: highContrast ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0.2)' }}></Box>
-                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width:'100%', padding: '0 4rem' }}>
                     <Box borderTop={1} borderColor="divider" sx={{ borderColor: highContrast ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0.2)' }}></Box>
                     <Box sx={{ p: 1, textAlign: 'center', display: 'flex', alignItems: 'center' }}>
-                        <Typography variant="body1" sx={{ ...buttonStyle }} onClick={toggleHighContrast} style={{ cursor: 'pointer', marginRight: '10px' }}>
+                        <Typography variant="body1" sx={{ ...buttonStyle, fontSize: {sm:'1rem'}}} onClick={toggleHighContrast} style={{ cursor: 'pointer', marginRight: '10px' }}>
                             Alto Contraste
                         </Typography>
-                        <Typography variant="body1" component={Link} to="/acessibilidade" sx={{ ...buttonStyle }} style={{ cursor: 'pointer' }}>
+                        <Typography variant="body1" component={Link} to="/acessibilidade" sx={{ ...buttonStyle,fontSize: {sm:'1rem'}}} style={{ cursor: 'pointer' }}>
                             Acessibilidade
                         </Typography>
                     </Box>
