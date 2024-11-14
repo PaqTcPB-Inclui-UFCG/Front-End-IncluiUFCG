@@ -333,16 +333,16 @@ const UserProfile = () => {
   return (
     <ThemeProvider theme={theme}>
         <Header highContrast={highContrast} setHighContrast={setHighContrast}/>
-      <div ref={bodyRef} style={{backgroundColor: highContrast ? "#000000" : '', minHeight: '100vh'}}>
+      <div ref={bodyRef} style={{backgroundColor: highContrast ? "#050834" : '', minHeight: '100vh'}}>
       <Container maxWidth="md" style={{ padding: '2rem', marginBottom: '2rem' }}>
-        <Paper elevation={3} style={{ padding: '2rem', borderRadius: '10px', backgroundColor: highContrast ? "#000000" : '' }}>
-          <Typography variant="h5" gutterBottom style={{ marginBottom: '1rem', textAlign: 'center' }}>
+        <Paper elevation={3} style={{ padding: '2rem', borderRadius: '10px', backgroundColor: highContrast ? "#050834" : '' }}>
+          <Typography variant="h5" gutterBottom style={{color: highContrast? '#FFFF' : '' , marginBottom: '1rem', textAlign: 'center'}}>
             Dados do Usuário
           </Typography>
           <Avatar
             alt={userData ? fullName : 'Usuário'}
             src={userData && userData.photo ? `data:image/jpeg;base64,${userData.photo}` : ''}
-            sx={{ width: 250, height: 250, margin: 'auto', marginBottom: '1rem', backgroundColor: '#f50057', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', borderRadius: '50%' }}
+            sx={{ width: 250, height: 250, margin: 'auto', marginBottom: '1rem', backgroundColor: '#7CB8F2', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', borderRadius: '50%' }}
           >
             <AccountCircleIcon sx={{ width: 250, height: 250 }} />
           </Avatar>
@@ -363,7 +363,7 @@ const UserProfile = () => {
                 justifyContent: 'center',
                 marginTop: '1rem',
                 marginBottom: '2rem',
-                color: highContrast ?'#FFFF00': "#0000FF", borderColor: highContrast ? '#FFFF00' : 'inherit'}}
+                color: highContrast ?'#FFFF': "#0000FF", borderColor: highContrast ? '#FFFF' : 'inherit'}}
             >
               Alterar foto
             </Button>
@@ -376,11 +376,11 @@ const UserProfile = () => {
             fullWidth
             style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : ''  }}
             InputLabelProps={{
-              sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
+              sx: { color: highContrast ? "#050834" : 'inherit', background:highContrast ? "#FFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
             }}
             sx={{
               '& fieldset': {
-                borderColor: highContrast ? "#FFFF00" : '',
+                borderColor: highContrast ? "#7CB8F2" : '',
                 borderWidth: '0.2rem' 
   
               }
@@ -394,11 +394,11 @@ const UserProfile = () => {
             fullWidth
             style={{ marginBottom: '1rem',  background: highContrast ? "#fff" : ''  }}
             InputLabelProps={{
-              sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
+              sx: { color: highContrast ? "#050834" : 'inherit', background:highContrast ? "#FFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
             }}
             sx={{
               '& fieldset': {
-                borderColor: highContrast ? "#FFFF00" : '',
+                borderColor: highContrast ? "#7CB8F2" : '',
                 borderWidth: '0.2rem' 
   
               }
@@ -412,11 +412,11 @@ const UserProfile = () => {
             fullWidth
             style={{ marginBottom: '1rem', background: highContrast ? "#fff" : '' }}
             InputLabelProps={{
-              sx: { color: highContrast ? "#0000000" : 'inherit', background:highContrast ? "#FFFF00" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
+              sx: { color: highContrast ? "#050834" : 'inherit', background:highContrast ? "#FFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal" }
             }}
             sx={{
               '& fieldset': {
-                borderColor: highContrast ? "#FFFF00" : '',
+                borderColor: highContrast ? "#7CB8F2" : '',
                 borderWidth: '0.2rem' 
   
               }
@@ -424,19 +424,19 @@ const UserProfile = () => {
           />
           <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
             <Button variant="contained" onClick={handleSaveChanges} style={{ marginRight: '1rem' }} sx={{
-            backgroundColor: highContrast ? '#FFFF00' : '#1976d2', 
+            backgroundColor: highContrast ? '#FFFF' : '#1976d2', 
             color: highContrast ? '#000000' : '#fff', 
             fontWeight: 'bold' , 
             '&:hover': {
-              backgroundColor: highContrast ? '#FFFF00' : '#0d56a6', 
+              backgroundColor: highContrast ? '#D5D5D5' : '#0d56a6', 
             }
           }}>Salvar Modificações</Button>
             <Button variant="contained" onClick={handleEditPassword} sx={{
-            backgroundColor: highContrast ? '#FFFF00' : '#1976d2', 
+            backgroundColor: highContrast ? '#FFFF' : '#1976d2', 
             color: highContrast ? '#000000' : '#fff', 
             fontWeight: 'bold' , 
             '&:hover': {
-              backgroundColor: highContrast ? '#FFFF00' : '#0d56a6', 
+              backgroundColor: highContrast ? '#D5D5D5' : '#0d56a6', 
             }
           }}>Alterar Senha</Button>
           </Box>
