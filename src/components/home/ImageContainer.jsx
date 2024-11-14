@@ -94,7 +94,7 @@ const ImageContainer = ({ highContrast }) => {
         style={{width:'100%', height:'40rem', overflow:'hidden'}}
       >
         <img 
-          src="./background.jpg" 
+          src="https://github.com/user-attachments/assets/7c83a035-c8d2-4e32-8ace-30653e9382d3" 
           className={classes.image} 
           style={{
             width: '100%', height: '100%', objectFit: 'cover', filter: `blur(2px) ${highContrast ? 'brightness(10%)' : 'brightness(50%)'}`
