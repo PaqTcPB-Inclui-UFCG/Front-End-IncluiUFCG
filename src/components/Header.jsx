@@ -64,8 +64,6 @@ export default function Header({ highContrast, setHighContrast }) {
 
     useHotkeys('alt+0', toggleHighContrast);
 
-    setHighContrast(prevHighContrast => !prevHighContrast);
-
     useEffect(() => {
         const token = sessionStorage.getItem('token');
         if (token) {
