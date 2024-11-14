@@ -67,10 +67,7 @@ const Mapa = () => {
                 <Typography variant="h5" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFF" : 'inherit' }}>
                         <strong style={{color: highContrast? "rgba(255,255,255, 0.9)" : 'rgba(92, 105, 114, 0.9)'}}>O mapa contém os principais pontos de acessibilidade presentes na UFCG.</strong>
                 </Typography>
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=19gXHIp_CxSAQt-F5pCzWBnYJnX-NSvg&ehbc=2E312F" 
-                width="100%" 
-                height="480">
-            </iframe>
+                <img style={{ display: 'block', margin: 'auto' }} src="https://github.com/user-attachments/assets/7491cd5f-2e4a-4e48-9ec8-0034827e72c8"></img>
         </div>
       <Footer highContrast={highContrast}/>
     </ThemeProvider>
