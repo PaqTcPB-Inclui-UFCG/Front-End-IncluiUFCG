@@ -45,7 +45,7 @@ const About = () => {
       <div style={{position:'relative', width:'100%'}}>
         
           <img
-                src="/about-image.jpg"
+                src="https://github.com/user-attachments/assets/dd860ef7-6fb5-4e32-8b4f-9b678e2b616f"
                 alt="Sobre a Iniciativa"
                 title="Pessoa lendo um livro"
                 style={{

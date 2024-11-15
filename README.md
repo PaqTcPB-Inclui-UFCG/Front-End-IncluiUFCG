@@ -1,3 +1,9 @@
+# Guia de inicialização do Front-End
+
+1. git clone https://github.com/PaqTcPB-Inclui-UFCG/Front-End-IncluiUFCG.git;
+2. npm install;
+3. npm run dev.
+
 # Guia de Uso IncluiUFCG: Docker para Front-end da Aplicação Adptare
 
 Este guia fornecerá instruções passo a passo para configurar e executar o contêiner Docker para o front-end da aplicação Adptare usando Docker.
