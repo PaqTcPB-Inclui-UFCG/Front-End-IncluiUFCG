@@ -1,3 +1,5 @@
+const DATABASE_URL = 'https://back-end-incluiufcg-18.onrender.com/';
+
 const ENDPOINTS = {
     articles: {
 
@@ -28,7 +30,7 @@ const ENDPOINTS = {
         getUserList: `${DATABASE_URL}` + 'users',
     },
     auth: {
-        login: `${{DATABASE_URL}}auth/login`
+        login: `${DATABASE_URL}auth/login`
     },
 
 }
