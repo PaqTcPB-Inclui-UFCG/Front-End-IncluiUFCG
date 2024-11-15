@@ -8,7 +8,7 @@ const ENDPOINTS = {
         getAllTags: `${DATABASE_URL}` + 'api/articles/getAllTags',
         updateArticle: (articleId) => `${DATABASE_URL}api/articles/${articleId}`,
         deleteArticle: (articleId) => `${DATABASE_URL}api/articles/${articleId}`,
-        searchArticles: (searchTerm, searchType) => `${{DATABASE_URL}}api/articles/search?keyword=${searchTerm}&searchType=${searchType}`,
+        searchArticles: (searchTerm, searchType) => `${DATABASE_URL}api/articles/search?keyword=${searchTerm}&searchType=${searchType}`,
         totalLikes: (articleId) => `${DATABASE_URL}api/articles/${articleId}/getFavorites`,
         
     },
