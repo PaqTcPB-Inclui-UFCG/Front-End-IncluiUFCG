@@ -52,7 +52,7 @@ function ComponentePrincipal() {
         filename: 'relatorio.pdf',
         image: { type: 'jpeg', quality: 1 },
         html2canvas: { scale: 4 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
+        jsPDF: { unit: 'in', format: [25, 15], orientation: 'portrait' }
       };
       html2pdf().from(element).set(opt).save();
 
