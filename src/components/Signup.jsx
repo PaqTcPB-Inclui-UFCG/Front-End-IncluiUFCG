@@ -137,7 +137,7 @@ const Signup = () => {
     };
   
     try {
-      const response = await fetch('http://localhost:8081/auth/register', {
+      const response = await fetch('https://back-end-incluiufcg-18.onrender.com/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -164,7 +164,7 @@ const Signup = () => {
   const handleLogin = async (email, password) => {
     localStorage.clear();
     try {
-      const response = await axios.post('http://localhost:8081/auth/login', {
+      const response = await axios.post('https://back-end-incluiufcg-18.onrender.com/auth/login', {
         login: email,
         password: password
       });
@@ -172,7 +172,7 @@ const Signup = () => {
       const token = response.data.token;
 
       sessionStorage.setItem('token', token);
-      const userResponse = await axios.get(`http://localhost:8081/users/userByEmail=${email}`, {
+      const userResponse = await axios.get(`https://back-end-incluiufcg-18.onrender.com/users/userByEmail=${email}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

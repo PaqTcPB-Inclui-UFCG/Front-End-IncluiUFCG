@@ -44,7 +44,7 @@ const UserTable = () => {
     const fetchData = async () => {
       try {
         const token = sessionStorage.getItem('token');
-        const response = await axios.get('http://localhost:8081/users', {
+        const response = await axios.get('https://back-end-incluiufcg-18.onrender.com/users', {
           headers: {
             Authorization: `Bearer ${token}`
           }
