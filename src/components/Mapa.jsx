@@ -67,7 +67,7 @@ const Mapa = () => {
                 <Typography variant="h5" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFF" : 'inherit' }}>
                         <strong style={{color: highContrast? "rgba(255,255,255, 0.9)" : 'rgba(92, 105, 114, 0.9)'}}>O mapa contém os principais pontos de acessibilidade presentes na UFCG.</strong>
                 </Typography>
-                <img style={{ display: 'block', margin: 'auto' }} src="https://github.com/user-attachments/assets/7491cd5f-2e4a-4e48-9ec8-0034827e72c8"></img>
+                <embed src="./mapa.pdf" type="application/pdf" width="100%" height="950px" />
         </div>
       <Footer highContrast={highContrast}/>
     </ThemeProvider>
