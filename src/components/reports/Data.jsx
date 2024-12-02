@@ -72,7 +72,7 @@ function ComponentePrincipal() {
               <Button onClick={gerarPDF} variant="contained" style={{backgroundColor: highContrast ? "white" : '',  color: highContrast ? "#050834" : "white"}} disabled={isGeneratingPDF}>
                 {isGeneratingPDF ? <CircularProgress size={24} color="inherit" /> : 'Gerar PDF'}
               </Button>
-              <Button  variant="contained" style={{backgroundColor: highContrast ? "white" : '',  color: highContrast ? "#050834" : "white", marginRight: '1rem', marginLeft: '1rem'}}><a href="./analise_cc.pdf" download style={{textDecoration: 'none', color: 'inherit'}}>Análise Ciência da Computação</a></Button>
+              <Button  variant="contained" style={{backgroundColor: highContrast ? "white" : '',  color: highContrast ? "#050834" : "white", marginRight: '1rem', marginLeft: '1rem'}}><a href="/analise_cc.pdf" download style={{textDecoration: 'none', color: 'inherit'}}>Análise Ciência da Computação</a></Button>
               
               <div>
                 {isRendered && (
