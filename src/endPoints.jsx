@@ -1,4 +1,4 @@
-const DATABASE_URL = 'https://back-end-incluiufcg-18.onrender.com/';
+const DATABASE_URL = `${process.env.DATABASE_URL}`;
 
 const ENDPOINTS = {
     articles: {
