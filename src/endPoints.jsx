@@ -1,4 +1,4 @@
-const DATABASE_URL = `${DATABASE_URL}`;
+const DATABASE_URL = `${import.meta.env.VITE_DATABASE_URL}`;
 
 const ENDPOINTS = {
     articles: {
