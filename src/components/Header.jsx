@@ -368,6 +368,10 @@ export default function Header({ highContrast, setHighContrast }) {
                         <Typography variant="body1" component={Link} to="/acessibilidade" sx={{ ...buttonStyle,fontSize: {sm:'1rem'}}} style={{ cursor: 'pointer' }}>
                             Acessibilidade
                         </Typography>
+                        <Typography variant="body1" component={Link} to="/iniciativa" sx={{ ...buttonStyle,fontSize: {sm:'1rem'}}} style={{ cursor: 'pointer' }}>
+                            Sobre a iniciativa
+                        </Typography>
+                       
                     </Box>
                 </Box>
             </AppBar>
