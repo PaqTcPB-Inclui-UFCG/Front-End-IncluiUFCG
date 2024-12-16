@@ -19,7 +19,6 @@ const ENDPOINTS = {
         deleteAttachment: (attachmentId) => `${DATABASE_URL}/api/attachments/${attachmentId}`
     },
     users: {
-        registerUser: `${DATABASE_URL}/auth/register`,
         getUserByEmail: (email) => `${DATABASE_URL}/users/userByEmail=${email}`,
         updateUser: (userId) => `${DATABASE_URL}/users/${userId}`,
         getUser: (userId) => `${DATABASE_URL}/users/${userId}`,
@@ -31,6 +30,7 @@ const ENDPOINTS = {
         getUserList: `${DATABASE_URL}` + '/users',
     },
     auth: {
+        registerUser: `${DATABASE_URL}/auth/register`,
         login: `${DATABASE_URL}/auth/login`
     },
 

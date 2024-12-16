@@ -138,7 +138,7 @@ const Signup = () => {
     };
   
     try {
-      const response = await fetch(ENDPOINTS.users.registerUser, {
+      const response = await fetch(ENDPOINTS.auth.registerUser, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -165,7 +165,7 @@ const Signup = () => {
   const handleLogin = async (email, password) => {
     localStorage.clear();
     try {
-      const response = await axios.post('https://back-end-incluiufcg-18.onrender.com/auth/login', {
+      const response = await axios.post(ENDPOINTS.auth.login, {
         login: email,
         password: password
       });
@@ -173,7 +173,7 @@ const Signup = () => {
       const token = response.data.token;
 
       sessionStorage.setItem('token', token);
-      const userResponse = await axios.get(`https://back-end-incluiufcg-18.onrender.com/users/userByEmail=${email}`, {
+      const userResponse = await axios.get(ENDPOINTS.users.getUserByEmail(email), {
         headers: {
           Authorization: `Bearer ${token}`
         }

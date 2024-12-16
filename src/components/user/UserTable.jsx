@@ -5,6 +5,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { useHotkeys } from 'react-hotkeys-hook';
+import ENDPOINTS from '../../endPoints';
 
 
 const theme = createTheme({
@@ -44,7 +45,7 @@ const UserTable = () => {
     const fetchData = async () => {
       try {
         const token = sessionStorage.getItem('token');
-        const response = await axios.get('https://back-end-incluiufcg-18.onrender.com/users', {
+        const response = await axios.get(ENDPOINTS.users.getUserList, {
           headers: {
             Authorization: `Bearer ${token}`
           }
