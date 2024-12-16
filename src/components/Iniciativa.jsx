@@ -84,7 +84,7 @@ const Iniciativa = () => {
                     </Typography> 
 
                     <Typography variant="h5" paragraph style={{ marginBottom: '1rem', fontSize: '1rem'}}>
-                        SONALY KATLY GARCIA NUNES PROMOVENDO, A INCLUSÃO EDUCACIONAL: UMA PLATAFORMA WEB ACESSÍVEL PARA APOIO A ESTUDANTES DA UFCG. [s.l: s.n.]. Disponível em: <a href="http://dspace.sti.ufcg.edu.br:8080/jspui/bitstream/riufcg/38329/1/SONALY%20KATLY%20GARCIA%20NUNES-ARTIGO-CEEI-CI%C3%8ANCIA%20DA%20COMPUTA%C3%87%C3%83O%20%282024%29.pdf">Link do TCC</a>. 
+                        SONALY KATLY GARCIA NUNES PROMOVENDO, A INCLUSÃO EDUCACIONAL: UMA PLATAFORMA WEB ACESSÍVEL PARA APOIO A ESTUDANTES DA UFCG. [s.l: s.n.]. Disponível em: <a href="https://front-end-inclui-ufcg.vercel.app/documentacao">Link do TCC</a>. 
                     </Typography>  
                      
                   </div>

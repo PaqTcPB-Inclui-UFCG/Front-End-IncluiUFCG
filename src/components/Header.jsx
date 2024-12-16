@@ -269,6 +269,7 @@ export default function Header({ highContrast, setHighContrast }) {
                                     </Menu>
                                 </Box>
                                 <Button sx={buttonStyle} component={Link} to="/mapa-da-ufcg">Mapa da UFCG</Button>
+                                <Button sx={buttonStyle} component={Link} to="/documentacao">Documentação</Button>
                                
                             </Box>
                             

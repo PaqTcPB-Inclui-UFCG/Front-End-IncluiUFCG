@@ -70,6 +70,7 @@ const Mapa = () => {
                 <embed src="/mapa.pdf" type="application/pdf" width="100%" height="950px" />
                 <Typography variant="h6" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFF" : 'inherit' }}>
                        Fonte: Smart Campus - UFCG, 2024.
+                       Disponível em: <a href="https://front-end-inclui-ufcg.vercel.app/documentacao">Link do TCC</a>. 
                 </Typography>
         </div>
       <Footer highContrast={highContrast}/>

@@ -16,6 +16,7 @@ import Acess from "../components/staticpages/Acess"
 import Data from "../components/reports/Data"
 import Mapa from "../components/Mapa"
 import Iniciativa from "../components/Iniciativa"
+import Documentacao from "../components/Documentacao"
 
 const router = createBrowserRouter([
   {
@@ -90,7 +91,10 @@ const router = createBrowserRouter([
     path: "/iniciativa",
     element: <Iniciativa />,
   },
-  
+  {
+    path: "/documentacao",
+    element: <Documentacao />,
+  },
 
 ])
 
