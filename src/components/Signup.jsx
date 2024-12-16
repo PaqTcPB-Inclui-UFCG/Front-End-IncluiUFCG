@@ -7,6 +7,7 @@ import Header from './Header';
 import Footer from './Footer';
 import { useHotkeys } from 'react-hotkeys-hook';
 import axios from 'axios';
+import ENDPOINTS from '../endPoints';
 
 
 const useStyles = makeStyles(() => ({
@@ -137,7 +138,7 @@ const Signup = () => {
     };
   
     try {
-      const response = await fetch('https://back-end-incluiufcg-18.onrender.com/auth/register', {
+      const response = await fetch(ENDPOINTS.users.registerUser, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -113,6 +113,7 @@ const Home = () => {
     })
     .then(response => setArticles(response.data))
     .catch(error => console.error('Error fetching articles:', error));
+    console.log(import.meta.env.VITE_DATABASE_URL);
   }, []);
 
 
