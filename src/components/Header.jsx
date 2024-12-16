@@ -221,7 +221,7 @@ export default function Header({ highContrast, setHighContrast }) {
                 <Toolbar>
                     <Typography variant="h6" sx={{ ...titleStyle, ...(isMobile && { fontSize: '4vw' }) }}
                         component={Link} to="/">
-                        <img src='https://github.com/user-attachments/assets/a521d91d-dc53-4dcb-afdc-4ef77942b9b3' 
+                        <img src='/logo.png' 
                         alt="incluiUFCG" 
                         style={{ width: isMobile ? '20vh' : '30vh', height: 'auto' }}   />
                     </Typography>
@@ -269,6 +269,7 @@ export default function Header({ highContrast, setHighContrast }) {
                                     </Menu>
                                 </Box>
                                 <Button sx={buttonStyle} component={Link} to="/mapa-da-ufcg">Mapa da UFCG</Button>
+                                <Button sx={buttonStyle} component={Link} to="/documentacao">Informações Úteis</Button>
                                
                             </Box>
                             
@@ -368,6 +369,10 @@ export default function Header({ highContrast, setHighContrast }) {
                         <Typography variant="body1" component={Link} to="/acessibilidade" sx={{ ...buttonStyle,fontSize: {sm:'1rem'}}} style={{ cursor: 'pointer' }}>
                             Acessibilidade
                         </Typography>
+                        <Typography variant="body1" component={Link} to="/iniciativa" sx={{ ...buttonStyle,fontSize: {sm:'1rem'}}} style={{ cursor: 'pointer' }}>
+                            Sobre a iniciativa
+                        </Typography>
+                       
                     </Box>
                 </Box>
             </AppBar>

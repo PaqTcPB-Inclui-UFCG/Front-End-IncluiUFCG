@@ -15,6 +15,9 @@ import ArticleEdit from "../components/articles/ArticleEdit"
 import Acess from "../components/staticpages/Acess"
 import Data from "../components/reports/Data"
 import Mapa from "../components/Mapa"
+import Iniciativa from "../components/Iniciativa"
+import Documentacao from "../components/Documentacao"
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -83,6 +86,14 @@ const router = createBrowserRouter([
   {
     path: "/mapa-da-ufcg",
     element: <Mapa/>
+  },
+  {
+    path: "/iniciativa",
+    element: <Iniciativa />,
+  },
+  {
+    path: "/documentacao",
+    element: <Documentacao />,
   },
 
 ])
