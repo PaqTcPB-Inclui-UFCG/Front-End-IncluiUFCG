@@ -68,6 +68,9 @@ const Mapa = () => {
                         <strong style={{color: highContrast? "rgba(255,255,255, 0.9)" : 'rgba(92, 105, 114, 0.9)'}}>O mapa contém os principais pontos de acessibilidade presentes na UFCG.</strong>
                 </Typography>
                 <embed src="/mapa.pdf" type="application/pdf" width="100%" height="950px" />
+                <Typography variant="h6" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFF" : 'inherit' }}>
+                       Fonte: Smart Campus - UFCG, 2024.
+                </Typography>
         </div>
       <Footer highContrast={highContrast}/>
     </ThemeProvider>
