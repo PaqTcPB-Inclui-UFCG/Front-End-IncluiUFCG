@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Chart } from 'react-google-charts';
 import * as XLSX from 'xlsx';
-import { Typography, Paper, ThemeProvider, CssBaseline, createTheme, Divider, Button, CircularProgress, Grid } from '@mui/material';
+import {Button } from '@mui/material';
 
 const ReportComputacao = () => {
   const [data, setData] = useState([]);
@@ -94,7 +94,7 @@ const ReportComputacao = () => {
 
       {chartsData.alunosPorCota.length > 1 && (
         <>
-          <h2>Quantidade de slunos por cota</h2>
+          <h2 style={{color: 'inherit', fontWeight: "normal" }}>Quantidade de alunos por cota</h2>
           <Chart
             chartType="BarChart"
             data={chartsData.alunosPorCota}
@@ -112,7 +112,7 @@ const ReportComputacao = () => {
 
       {chartsData.alunosDeficienciaPorCota.length > 1 && (
         <>
-          <h2>Quantidade de alunos com deficiência por cota</h2>
+          <h2 style={{color: 'inherit', fontWeight: "normal" }}>Quantidade de alunos com deficiência por cota</h2>
           <Chart
             chartType="PieChart"
             data={chartsData.alunosDeficienciaPorCota}
@@ -125,7 +125,7 @@ const ReportComputacao = () => {
 
       {chartsData.ingressantesGenero.length > 1 && (
         <>
-          <h2>Ingressantes por gênero</h2>
+          <h2 style={{color: 'inherit', fontWeight: "normal" }}>Ingressantes por gênero</h2>
           <Chart
             chartType="PieChart"
             data={chartsData.ingressantesGenero}
@@ -138,7 +138,7 @@ const ReportComputacao = () => {
 
       {chartsData.deficientesPorGenero.length > 1 && (
         <>
-          <h2>Quantidade de alunos com deficiência por gênero</h2>
+          <h2 style={{color: 'inherit', fontWeight: "normal" }}>Quantidade de alunos com deficiência por gênero</h2>
           <Chart
             chartType="PieChart"
             data={chartsData.deficientesPorGenero}
@@ -151,7 +151,7 @@ const ReportComputacao = () => {
 
       {chartsData.ingressantesRaca.length > 1 && (
         <>
-          <h2>Ingressantes por raça</h2>
+          <h2 style={{color: 'inherit', fontWeight: "normal" }}>Ingressantes por raça</h2>
           <Chart
             chartType="BarChart"
             data={chartsData.ingressantesRaca}
@@ -169,7 +169,7 @@ const ReportComputacao = () => {
 
       {chartsData.deficientesPorRaca.length > 1 && (
         <>
-          <h2>Quantidade de Alunos com deficiência por raça</h2>
+          <h2 style={{color: 'inherit', fontWeight: "normal" }}>Quantidade de Alunos com deficiência por raça</h2>
           <Chart
             chartType="BarChart"
             data={chartsData.deficientesPorRaca}
