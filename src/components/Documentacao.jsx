@@ -61,7 +61,7 @@ const Documentacao = () => {
                       />
             
                       <Typography variant="h3" gutterBottom sx={{ color: highContrast ? "#FFFF" : 'inherit', position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', color:'white', fontSize:{ xs: '1.5rem', sm: '2rem', md: '3rem', lg: '3.5rem'}}}>
-                          Documentação
+                          Informações Úteis
                       </Typography>
                   </div>
             
@@ -70,7 +70,7 @@ const Documentacao = () => {
                       <strong style={{color: highContrast? "white" : 'rgba(92, 105, 114, 0.9)'}}>REFERÊNCIAS UTILIZADAS</strong>
                     </Typography>
                     <Typography variant="body1" paragraph style={{ marginBottom: '1rem', color: highContrast ? "#FFFFFF" : 'inherit', fontWeight: highContrast ? "bold": "normal" }}>
-                      Para a atualização do site foram utilizadas referências bibliográficas que serviram de base para continuiação e aprimoramento das informações disponíveis. Elas estão disponíveis nos links abaixo para download e consulta.
+                      Para a atualização do site foram utilizadas referências bibliográficas que serviram de base para continuação e aprimoramento das informações disponíveis. Elas estão disponíveis nos links abaixo para download e consulta.
                     </Typography > 
 
                     <Typography variant="h5" paragraph style={{ marginBottom: '1rem' }}>
