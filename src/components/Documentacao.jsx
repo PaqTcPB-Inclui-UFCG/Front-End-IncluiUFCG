@@ -61,7 +61,7 @@ const Documentacao = () => {
                       />
             
                       <Typography variant="h3" gutterBottom sx={{ color: highContrast ? "#FFFF" : 'inherit', position:'absolute', top:'50%', left:'50%', transform:'translate(-50%, -50%)', color:'white', fontSize:{ xs: '1.5rem', sm: '2rem', md: '3rem', lg: '3.5rem'}}}>
-                          Informações Úteis
+                          Material Complementar
                       </Typography>
                   </div>
             
