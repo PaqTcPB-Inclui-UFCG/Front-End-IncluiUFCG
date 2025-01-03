@@ -28,7 +28,12 @@ const sortOptions = [
 ];
 
 const sortFunctions = {
-  recentes: (a, b) => new Date(b.createdAt.valueOf()) - new Date(a.createdAt.valueOf()),
+  recentes: (a, b) => {
+    const dA = a.createdAt ? new Date(a.createdAt).valueOf() : 0;
+    const dB = b.createdAt ? new Date(b.createdAt).valueOf() : 0;
+    return dB - dA
+  },
+
   alfabetica: (a, b) => a.titulo.localeCompare(b.titulo),
   populares: (a, b) => b.views - a.views,
 };
